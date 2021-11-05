@@ -13,13 +13,12 @@ pipeline {
         }
         
         // Add more stages here
-        stage('Deploy') {
-            steps {
-                sh '''
-                    oc start-build greeting-metrics \
-                    --follow --wait -n opmnxb-metrics
-                '''
-            }
-         }    
+stage('Deploy') {
+steps {
+sh '''
+oc start-build greeting-metrics \
+--follow --wait -n RHT_OCP4_DEV_USER-metrics
+'''
+}
     }
 }
